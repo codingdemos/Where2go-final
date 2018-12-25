@@ -1,0 +1,8 @@
+<resources>
+  <string name="application_name">Where2go</string>
+  <string name="access_token">
+      pk.eyJ1IjoiY29kaW5nZGVtb3MiLCJhIjoiY2pvY2Vhc3dxMHFkMjNxcWxhb2t0YTVtOSJ9.Y4sULP2UIZfKsWHnW72vpQ</string>
+  <string name="msg_location_not_granted">User location was not granted</string>
+  <string name="msg_map_permission">This app needs location permission to be able to show your
+    location on the map</string>
+</resources>
