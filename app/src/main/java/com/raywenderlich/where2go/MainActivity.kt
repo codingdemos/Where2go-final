@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Razeware LLC
+ * Copyright (c) 2019 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -167,7 +167,8 @@ class MainActivity : AppCompatActivity(), PermissionsListener,
     }
 
     fun setCameraPosition(location: Location) {
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(LatLng(location.latitude, location.longitude), 30.0))
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(LatLng(location.latitude,
+            location.longitude), 30.0))
     }
 
     @SuppressWarnings("MissingPermission")
@@ -199,12 +200,14 @@ class MainActivity : AppCompatActivity(), PermissionsListener,
         if (granted) {
             enableLocation()
         } else {
-            Toast.makeText(this, getString(R.string.msg_location_not_granted), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.msg_location_not_granted),
+                Toast.LENGTH_LONG).show()
             finish()
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,
+                                            grantResults: IntArray) {
         permissionManager.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
@@ -291,12 +294,10 @@ class MainActivity : AppCompatActivity(), PermissionsListener,
                 }
 
                 override fun onResponse(
-                    call: Call<DirectionsResponse>,
-                    response: Response<DirectionsResponse>
-                ) {
+                    call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
 
                     if (navigationMapRoute != null) {
-                        navigationMapRoute?.removeRoute()
+                        navigationMapRoute?.updateRouteVisibilityTo(false)
                     } else {
                         navigationMapRoute = NavigationMapRoute(null, mapView, map)
                     }

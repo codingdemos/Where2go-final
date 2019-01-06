@@ -11,8 +11,7 @@
     android:id="@+id/mapbox"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"
-    mapbox:mapbox_uiRotateGestures="false" />
+    mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"/>
 
   <android.support.design.widget.FloatingActionButton
     android:id="@+id/btnNavigate"
